@@ -20,7 +20,7 @@ module.exports = function(app) {
   // API POST Requests
 
   app.post("/api/friend", function(req, res) {
-    console.log(req.body.scores)
+
     // A POST routes /api/friends. This will be used to handle incoming survey results. This route will also be used to handle the compatibility logic.
     var newUserScore = req.body.scores;
     var results = [];
@@ -29,14 +29,13 @@ module.exports = function(app) {
 
     //pushes user to friendsArray
     friendsData.push(req.body);
-
-    console.log(friendsData)
     
     //Goes through friendsArray, compares scores, and pushes the difference of each comparison to results array
     for (var i=0; i<friendsData.length; i+=1) {
       var difference = 0;
       //Goes through newUserScore array and compares each score with each individual user in the array
-      for (var j=0; j<newUserScore.length; i+=1) {
+      for (var j=0; j<newUserScore.length; j+=1) {
+        console.log(friendsData[i].scores[j])
         difference += (Math.abs(parseInt(friendsData[i].scores[j]) - parseInt(newUserScore[j])))
       };
       //pushes to results array
@@ -52,7 +51,7 @@ module.exports = function(app) {
     };
 
     //new variable get assigned the best match and gets sent out
-    besties = friendsData[bestMatch]; 
+    besties = friendsData[match]; 
     console.log(besties);
     res.json(besties);
   });
