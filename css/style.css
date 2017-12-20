@@ -1,0 +1,15 @@
+/****** HEADER ******/
+
+h1, h2, h3, p {
+    color: pink;
+}
+
+/****** NAVIGATION ******/
+
+/****** MAIN CONTENT ******/
+
+.jumbotron {
+    height: 500px;
+}
+
+/****** FOOTER ******/
