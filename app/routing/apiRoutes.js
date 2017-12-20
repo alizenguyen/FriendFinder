@@ -20,7 +20,7 @@ module.exports = function(app) {
   // API POST Requests
 
   app.post("/api/friend", function(req, res) {
-    
+    console.log(req.body.scores)
     // A POST routes /api/friends. This will be used to handle incoming survey results. This route will also be used to handle the compatibility logic.
     var newUserScore = req.body.scores;
     var results = [];
