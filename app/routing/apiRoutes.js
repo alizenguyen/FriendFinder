@@ -26,9 +26,6 @@ module.exports = function(app) {
     var results = [];
     var match = 0;
     var besties;
-
-    //pushes user to friendsArray
-    friendsData.push(req.body);
     
     //Goes through friendsArray, compares scores, and pushes the difference of each comparison to results array
     for (var i=0; i<friendsData.length; i+=1) {
@@ -42,17 +39,25 @@ module.exports = function(app) {
       results.push(difference);
     }
 
+    console.log(results);
+
     //Goes through the results array
     for (var i=0; i<results.length; i+=1) {
+      console.log(results[i]);
       //Compares if the difference is less than or equal to the first result index, if less or equal match gets reassigned and compared again until loop is complete
       if(results[i] <= results[match]) {
         match = i
+        console.log(match);
       }
     };
 
     //new variable get assigned the best match and gets sent out
     besties = friendsData[match]; 
+    console.log("*******************************************");
     console.log(besties);
+
+    //pushes user to friendsArray
+    friendsData.push(req.body);
     res.json(besties);
   });
 
