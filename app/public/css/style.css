@@ -1,7 +1,11 @@
 /****** HEADER ******/
 
-h1, h2, h3, p {
-    color: pink;
+h1, h2, h3, h4, p {
+
+}
+
+#title {
+
 }
 
 /****** NAVIGATION ******/
@@ -9,8 +13,8 @@ h1, h2, h3, p {
 /****** MAIN CONTENT ******/
 
 .jumbotron {
-    height: 300px;
-    margin-top: -2%;
+    height: 400px;
+    margin-top: -3%;
 }
 
 /****** FOOTER ******/
